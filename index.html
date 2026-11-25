@@ -400,12 +400,12 @@ body.prof .pen,body.prof .stu-only{display:none!important}
       <div class="facts">
         <div><b>1 h</b><span>durée</span></div>
         <div><b>/20</b><span>barème</span></div>
-        <div><b>5</b><span>documents</span></div>
+        <div><b>6</b><span>documents</span></div>
       </div>
       <div class="parts">
-        <div><span>Partie 1 · Les notions du cours</span><b>8 pts</b></div>
-        <div><span>Partie 2 · Qui commande chez Bitume &amp; Basilic ?</span><b>6 pts</b></div>
-        <div><span>Partie 3 · Combien coûte la Piadina ?</span><b>6 pts</b></div>
+        <div><span>Partie 1 · Les notions du cours</span><b>5 pts</b></div>
+        <div><span>Partie 2 · Qui commande chez Bitume &amp; Basilic ?</span><b>8 pts</b></div>
+        <div><span>Partie 3 · La Piadina et le quatrième camion</span><b>7 pts</b></div>
       </div>
     </div>
     <form class="form" id="loginForm" autocomplete="off" novalidate>
@@ -454,15 +454,16 @@ body.prof .pen,body.prof .stu-only{display:none!important}
     <div class="side-scroll">
       <h5>Épreuve</h5>
       <button class="nav" data-go="cover" type="button"><span class="ico">i</span><span class="t">Consignes<small>à lire d'abord</small></span></button>
-      <button class="nav" data-go="p1" type="button"><span class="ico">1</span><span class="t">Les notions du cours<small>Q1 à Q3</small></span><span class="pts">8 pts</span></button>
-      <button class="nav" data-go="p2" type="button"><span class="ico">2</span><span class="t">Qui commande ici ?<small>Q4 à Q8</small></span><span class="pts">6 pts</span></button>
-      <button class="nav" data-go="p3" type="button"><span class="ico">3</span><span class="t">La Piadina<small>Q9 à Q12</small></span><span class="pts">6 pts</span></button>
+      <button class="nav" data-go="p1" type="button"><span class="ico">1</span><span class="t">Les notions du cours<small>Q1 et Q2</small></span><span class="pts">5 pts</span></button>
+      <button class="nav" data-go="p2" type="button"><span class="ico">2</span><span class="t">Qui commande ici ?<small>Q3 à Q8</small></span><span class="pts">8 pts</span></button>
+      <button class="nav" data-go="p3" type="button"><span class="ico">3</span><span class="t">Piadina et 4e camion<small>Q9 à Q13</small></span><span class="pts">7 pts</span></button>
       <h5>Documents</h5>
       <button class="nav navdoc" data-go="d1" type="button"><span class="ico">D1</span><span class="t">L'entreprise</span></button>
       <button class="nav navdoc" data-go="d2" type="button"><span class="ico">D2</span><span class="t">L'organigramme</span></button>
       <button class="nav navdoc" data-go="d3" type="button"><span class="ico">D3</span><span class="t">Paroles d'équipe</span></button>
       <button class="nav navdoc" data-go="d4" type="button"><span class="ico">D4</span><span class="t">Tableau de bord RH</span></button>
       <button class="nav navdoc" data-go="d5" type="button"><span class="ico">D5</span><span class="t">Recette et tarifs</span></button>
+      <button class="nav navdoc" data-go="d6" type="button"><span class="ico">D6</span><span class="t">Le 4e camion</span></button>
       <h5>Avancement</h5>
       <div class="prog"><span id="progTxt">0 réponse sur 0</span><div class="prog-t"><div class="prog-f" id="progF"></div></div></div>
     </div>
@@ -482,15 +483,15 @@ body.prof .pen,body.prof .stu-only{display:none!important}
             <ul>
               <li><b>Bitume &amp; Basilic</b> fait rouler trois food trucks de street-food italienne à Bellerive.</li>
               <li>Depuis l'ouverture du troisième camion, l'équipe s'essouffle : départs, réunions sans fin, décisions qui traînent.</li>
-              <li>Et la gérante veut lancer un nouveau plat, la <b>Piadina</b>, sans savoir à quel prix la vendre.</li>
+              <li>Et la gérante veut lancer un nouveau plat, la <b>Piadina</b>, et ouvrir un quatrième camion, sans savoir à quel prix vendre ni où s'installer.</li>
               <li>Ton travail : utiliser le cours pour comprendre l'entreprise, puis chiffrer le plat.</li>
             </ul>
           </div>
           <div class="box">
             <h3>Conseils de temps</h3>
-            <div class="toolrow"><b class="i">1</b><div><b>Partie 1</b> · environ 15 min. Tu réponds avec ton cours, sans document.</div></div>
-            <div class="toolrow"><b class="i">2</b><div><b>Partie 2</b> · environ 20 min. Appuie-toi sur les documents 1 à 4.</div></div>
-            <div class="toolrow"><b class="i">3</b><div><b>Partie 3</b> · environ 20 min. Calculs à partir du document 5.</div></div>
+            <div class="toolrow"><b class="i">1</b><div><b>Partie 1</b> · environ 10 min. Tu réponds avec ton cours, sans document.</div></div>
+            <div class="toolrow"><b class="i">2</b><div><b>Partie 2</b> · environ 25 min. Appuie-toi sur les documents 1 à 4. Beaucoup de réponses sont à rédiger.</div></div>
+            <div class="toolrow"><b class="i">3</b><div><b>Partie 3</b> · environ 20 min. Calculs et choix à partir des documents 5 et 6.</div></div>
             <div class="toolrow"><b class="i">✓</b><div>Garde 5 min pour te relire, puis remets ta copie et enregistre ton PDF.</div></div>
           </div>
         </div>
@@ -506,10 +507,10 @@ body.prof .pen,body.prof .stu-only{display:none!important}
 
       <!-- PARTIE 1 -->
       <section class="panel" data-p="p1">
-        <div class="p-head"><div class="p-num">1</div><div><div class="p-kick">Partie 1 · Sans document</div><h2>Les notions du cours</h2></div><div class="p-pts">8 pts</div></div>
+        <div class="p-head"><div class="p-num">1</div><div><div class="p-kick">Partie 1 · Sans document · environ 10 min</div><h2>Les notions du cours</h2></div><div class="p-pts">5 pts</div></div>
 
         <div class="q" id="Q1">
-          <div class="q-bar"><strong>Q1 · Le questionnaire express</strong><span>4 pts</span></div>
+          <div class="q-bar"><strong>Q1 · Le questionnaire express</strong><span>3 pts</span></div>
           <div class="q-body hlz">
             <p class="consigne">Pour chaque question, choisis la seule bonne réponse. 0,5 point par bonne réponse, pas de point négatif.</p>
             <div class="qcm" id="qcmBox"></div>
@@ -517,18 +518,11 @@ body.prof .pen,body.prof .stu-only{display:none!important}
         </div>
 
         <div class="q" id="Q2">
-          <div class="q-bar"><strong>Q2 · Les cinq gestes du manager</strong><span>2,5 pts</span></div>
+          <div class="q-bar"><strong>Q2 · La règle des 3 D</strong><span>2 pts</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Dans un camion de Bitume &amp; Basilic, on a entendu ces cinq phrases. Associe chacune au geste du manager qu'elle illustre. Chaque geste sert une seule fois.</p>
-            <div class="match" id="q2Box"></div>
-          </div>
-        </div>
-
-        <div class="q" id="Q3">
-          <div class="q-bar"><strong>Q3 · Offre, demande ou environnement ?</strong><span>1,5 pt</span></div>
-          <div class="q-body">
-            <p class="consigne hlz">Ces informations ont été relevées lors de l'étude de marché. Classe chacune d'elles.</p>
-            <div class="cards" id="q3Box"></div>
+            <p class="consigne hlz">Lina Moreau, la gérante de Bitume &amp; Basilic, a noté deux intentions pour l'année prochaine. Ce ne sont pas encore de vrais objectifs. Réécris chacune pour qu'elle soit <b>Décrite</b>, <b>Dosée</b> et <b>Datée</b>.</p>
+            <div class="sub-q"><label for="ta_q2a">a) « Il faudrait que les clients attendent moins le midi. »</label><textarea class="ta" id="ta_q2a" data-k="q2_a" data-min="80" placeholder="Objectif : …"></textarea></div>
+            <div class="sub-q"><label for="ta_q2b">b) « On aimerait que l'équipe reste plus longtemps chez nous. »</label><textarea class="ta" id="ta_q2b" data-k="q2_b" data-min="80" placeholder="Objectif : …"></textarea></div>
           </div>
         </div>
         <div style="display:flex;justify-content:flex-end"><button class="btn btn-y" type="button" data-go="p2">Partie 2 →</button></div>
@@ -536,50 +530,58 @@ body.prof .pen,body.prof .stu-only{display:none!important}
 
       <!-- PARTIE 2 -->
       <section class="panel" data-p="p2">
-        <div class="p-head"><div class="p-num">2</div><div><div class="p-kick">Partie 2 · Cas pratique · Documents 1 à 4</div><h2>Qui commande chez Bitume &amp; Basilic ?</h2></div><div class="p-pts">6 pts</div></div>
-        <div class="intro hlz">Lina Moreau a créé l'entreprise il y a cinq ans. Elle t'ouvre ses dossiers : présentation, organigramme, paroles de son équipe et indicateurs. À toi de poser un premier diagnostic.</div>
+        <div class="p-head"><div class="p-num">2</div><div><div class="p-kick">Partie 2 · Documents 1 à 4 · environ 25 min</div><h2>Qui commande chez Bitume &amp; Basilic ?</h2></div><div class="p-pts">8 pts</div></div>
+        <div class="intro hlz">Lina Moreau a créé l'entreprise il y a cinq ans. Elle t'ouvre ses dossiers : présentation, organigramme, paroles de son équipe et indicateurs. À toi de comprendre comment l'entreprise est dirigée, et de poser un diagnostic.</div>
+
+        <div class="q" id="Q3">
+          <div class="q-bar"><strong>Q3 · Une organisation et sa raison d'être</strong><span>1,5 pt</span></div>
+          <div class="q-body">
+            <p class="consigne hlz">a) À l'aide du <button type="button" class="docref" data-doc="d1">📄 Doc 1</button>, indique le type d'organisation de Bitume &amp; Basilic.</p>
+            <div class="chips" id="q3Chips"></div>
+            <div class="sub-q"><label for="ta_q3">b) Dans l'extrait du projet d'entreprise, relève la finalité et un objectif. Explique ensuite ce qui les différencie.</label><textarea class="ta" id="ta_q3" data-k="q3_just" data-min="120" placeholder="Finalité : …&#10;Objectif : …&#10;Différence : …"></textarea></div>
+          </div>
+        </div>
 
         <div class="q" id="Q4">
-          <div class="q-bar"><strong>Q4 · Quel type d'organisation ?</strong><span>1 pt</span></div>
+          <div class="q-bar"><strong>Q4 · Trois managers, trois styles</strong><span>1,5 pt</span></div>
           <div class="q-body">
-            <p class="consigne hlz">À l'aide du <button type="button" class="docref" data-doc="d1">📄 Doc 1</button>, indique le type d'organisation de Bitume &amp; Basilic, puis justifie avec un élément précis du document.</p>
-            <div class="chips" id="q4Chips"></div>
-            <div class="sub-q"><label for="ta_q4">Justification</label><textarea class="ta" id="ta_q4" data-k="q4_just" data-min="90" placeholder="Je le sais parce que…"></textarea></div>
+            <p class="consigne hlz">Lis les paroles de Lina, Hugo et Sofia (<button type="button" class="docref" data-doc="d3">📄 Doc 3</button>). Identifie le style de direction de chacun.</p>
+            <div class="cards" id="q4Box"></div>
           </div>
         </div>
 
         <div class="q" id="Q5">
-          <div class="q-bar"><strong>Q5 · Finalité ou objectif ?</strong><span>1 pt</span></div>
+          <div class="q-bar"><strong>Q5 · Quel style pour quelle situation ?</strong><span>1,5 pt</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Voici quatre phrases tirées du projet d'entreprise (<button type="button" class="docref" data-doc="d1">📄 Doc 1</button>). Pour chacune, dis s'il s'agit de la finalité ou d'un objectif.</p>
-            <div class="cards" id="q5Box"></div>
+            <p class="consigne hlz">Il n'existe pas de bon style dans l'absolu. Pour chaque situation vécue chez Bitume &amp; Basilic, choisis le style le plus adapté et justifie-le en une phrase, avec <b>l'urgence</b>, <b>l'expérience</b> des personnes ou <b>l'enjeu</b> de la décision. C'est la justification qui compte.</p>
+            <div id="q5Box"></div>
           </div>
         </div>
 
         <div class="q" id="Q6">
-          <div class="q-bar"><strong>Q6 · Trois managers, trois styles</strong><span>1,5 pt</span></div>
-          <div class="q-body">
-            <p class="consigne hlz">Lis les paroles de Lina, Hugo et Sofia (<button type="button" class="docref" data-doc="d3">📄 Doc 3</button>). Identifie le style de direction de chacun.</p>
-            <div class="cards" id="q6Box"></div>
-          </div>
-        </div>
-
-        <div class="q" id="Q7">
-          <div class="q-bar"><strong>Q7 · Les signaux d'alerte</strong><span>1 pt</span></div>
+          <div class="q-bar"><strong>Q6 · Les signaux d'alerte</strong><span>1 pt</span></div>
           <div class="q-body">
             <p class="consigne hlz">À partir du <button type="button" class="docref" data-doc="d4">📄 Doc 4</button>, calcule les deux indicateurs suivants. Arrondis au dixième si besoin.</p>
             <div class="numrow">
-              <div class="num"><label for="n_turn">Taux de turnover<small>de l'année 2025-2026</small></label><div class="inwrap"><input id="n_turn" data-k="q7_turn" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
-              <div class="num"><label for="n_abs">Taux d'absentéisme<small>de l'année 2025-2026</small></label><div class="inwrap"><input id="n_abs" data-k="q7_abs" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+              <div class="num"><label for="n_turn">Taux de turnover<small>de l'année 2025-2026</small></label><div class="inwrap"><input id="n_turn" data-k="q6_turn" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+              <div class="num"><label for="n_abs">Taux d'absentéisme<small>de l'année 2025-2026</small></label><div class="inwrap"><input id="n_abs" data-k="q6_abs" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
             </div>
           </div>
         </div>
 
+        <div class="q" id="Q7">
+          <div class="q-bar"><strong>Q7 · Libérer l'entreprise ?</strong><span>1,5 pt</span></div>
+          <div class="q-body">
+            <p class="consigne hlz">Lina voudrait « libérer » son entreprise (<button type="button" class="docref" data-doc="d3">📄 Doc 3</button>, dernier témoignage).<br>a) Explique en une phrase ce qu'est une entreprise libérée.<br>b) Donne <b>un avantage</b> et <b>deux risques</b> de ce projet <b>pour Bitume &amp; Basilic</b>, en t'appuyant sur la situation de l'entreprise.</p>
+            <textarea class="ta" id="ta_q7" data-k="q7" data-min="170" placeholder="a) …&#10;b) Avantage : …&#10;Risque 1 : …&#10;Risque 2 : …"></textarea>
+          </div>
+        </div>
+
         <div class="q" id="Q8">
-          <div class="q-bar"><strong>Q8 · Ton premier diagnostic</strong><span>1,5 pt</span></div>
+          <div class="q-bar"><strong>Q8 · Ton diagnostic</strong><span>1 pt</span></div>
           <div class="q-body">
             <p class="consigne hlz">En t'appuyant sur l'organigramme (<button type="button" class="docref" data-doc="d2">📄 Doc 2</button>) et sur les documents 3 et 4 :<br>a) relève <b>deux</b> signes qui montrent que l'organisation fonctionne mal ;<br>b) choisis l'un de ces signes et explique la <b>cause</b> probable qui se cache derrière ce <b>symptôme</b>.</p>
-            <textarea class="ta" id="ta_q8" data-k="q8" data-min="180" placeholder="a) Premier signe : …  Deuxième signe : …&#10;b) …"></textarea>
+            <textarea class="ta" id="ta_q8" data-k="q8" data-min="150" placeholder="a) Premier signe : …  Deuxième signe : …&#10;b) …"></textarea>
           </div>
         </div>
         <div style="display:flex;justify-content:flex-end"><button class="btn btn-y" type="button" data-go="p3">Partie 3 →</button></div>
@@ -587,45 +589,63 @@ body.prof .pen,body.prof .stu-only{display:none!important}
 
       <!-- PARTIE 3 -->
       <section class="panel" data-p="p3">
-        <div class="p-head"><div class="p-num">3</div><div><div class="p-kick">Partie 3 · Cas pratique · Document 5</div><h2>Combien coûte la Piadina ?</h2></div><div class="p-pts">6 pts</div></div>
-        <div class="intro hlz">Lina veut ajouter la <b>Piadina Bitume</b> à la carte des trois camions. Le chef a écrit la recette et les tarifs des fournisseurs (<button type="button" class="docref" data-doc="d5">📄 Doc 5</button>). Ouvre l'écran partagé pour avoir le document sous les yeux.</div>
+        <div class="p-head"><div class="p-num">3</div><div><div class="p-kick">Partie 3 · Documents 5 et 6 · environ 20 min</div><h2>La Piadina et le quatrième camion</h2></div><div class="p-pts">7 pts</div></div>
+        <div class="intro hlz">Lina veut ajouter la <b>Piadina Bitume</b> à la carte, et elle hésite entre deux emplacements pour un quatrième camion. Ouvre l'écran partagé pour garder le document sous les yeux.</div>
 
         <div class="q" id="Q9">
-          <div class="q-bar"><strong>Q9 · La fiche technique</strong><span>2,5 pts</span></div>
+          <div class="q-bar"><strong>Q9 · La fiche technique</strong><span>2 pts</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Complète la fiche technique pour <b>une portion</b>. Attention aux unités : la quantité doit être exprimée dans la même unité que le prix. Les cases en vert d'eau sont notées.</p>
+            <p class="consigne hlz">À l'aide du <button type="button" class="docref" data-doc="d5">📄 Doc 5</button>, complète la fiche technique pour <b>une portion</b>. Attention aux unités : la quantité doit être exprimée dans la même unité que le prix. Les cases en vert d'eau sont notées.</p>
             <div class="ftwrap"><table class="ft" id="ftTable"></table></div>
             <div class="legend-ft"><span><i></i>case notée</span><span>Résultats en euros, avec deux chiffres après la virgule.</span></div>
           </div>
         </div>
 
         <div class="q" id="Q10">
-          <div class="q-bar"><strong>Q10 · Le prix de vente calculé</strong><span>1 pt</span></div>
+          <div class="q-bar"><strong>Q10 · Du coût au prix affiché</strong><span>1 pt</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Lina applique un coefficient multiplicateur de <b>2,5</b> au coût de revient. La TVA est de <b>10 %</b>. Calcule :</p>
+            <p class="consigne hlz">Lina applique un coefficient multiplicateur de <b>2,5</b> au coût de revient. La TVA est de <b>10 %</b>. Elle décide finalement d'afficher la Piadina à <b>9,90 € TTC</b> (<button type="button" class="docref" data-doc="d5">📄 Doc 5</button>). Calcule :</p>
             <div class="numrow">
               <div class="num"><label for="n_ht">Prix de vente HT<small>calculé avec le coefficient</small></label><div class="inwrap"><input id="n_ht" data-k="q10_ht" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
-              <div class="num"><label for="n_ttc">Prix de vente TTC<small>arrondi au centime</small></label><div class="inwrap"><input id="n_ttc" data-k="q10_ttc" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+              <div class="num"><label for="n_ttc">Prix de vente TTC<small>calculé, arrondi au centime</small></label><div class="inwrap"><input id="n_ttc" data-k="q10_ttc" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+            </div>
+            <div class="numrow" style="margin-top:12px">
+              <div class="num"><label for="n_htr">Prix HT réellement encaissé<small>pour une Piadina affichée 9,90 €</small></label><div class="inwrap"><input id="n_htr" data-k="q10_htr" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+              <div class="num"><label for="n_marge">Marge par portion<small>avec ce prix affiché</small></label><div class="inwrap"><input id="n_marge" data-k="q10_marge" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
             </div>
           </div>
         </div>
 
         <div class="q" id="Q11">
-          <div class="q-bar"><strong>Q11 · Le prix affiché sur l'ardoise</strong><span>1 pt</span></div>
+          <div class="q-bar"><strong>Q11 · La grille de décision</strong><span>1,5 pt</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Finalement, Lina affiche la Piadina à <b>9,90 € TTC</b> sur l'ardoise. Calcule :</p>
+            <p class="consigne hlz">À l'aide du <button type="button" class="docref" data-doc="d6">📄 Doc 6</button>, calcule le total pondéré de chaque emplacement, puis choisis celui que tu conseilles à Lina. Justifie avec le score <b>et</b> au moins une information qui n'est pas dans la grille.</p>
             <div class="numrow">
-              <div class="num"><label for="n_htr">Prix HT réellement encaissé<small>pour une Piadina vendue 9,90 €</small></label><div class="inwrap"><input id="n_htr" data-k="q11_htr" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
-              <div class="num"><label for="n_marge">Marge par portion<small>avec ce prix affiché</small></label><div class="inwrap"><input id="n_marge" data-k="q11_marge" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+              <div class="num"><label for="n_ga">Total pondéré · Hôpital Saint-Roch<small>sur 40</small></label><div class="inwrap"><input id="n_ga" data-k="q11_a" inputmode="decimal" autocomplete="off"><span>pts</span></div></div>
+              <div class="num"><label for="n_gb">Total pondéré · Parc d'activités Nord<small>sur 40</small></label><div class="inwrap"><input id="n_gb" data-k="q11_b" inputmode="decimal" autocomplete="off"><span>pts</span></div></div>
             </div>
+            <div class="sub-q"><span class="lb">Emplacement conseillé</span><div class="chips" id="q11Chips"></div></div>
+            <div class="sub-q"><label for="ta_q11">Justification</label><textarea class="ta" id="ta_q11" data-k="q11_just" data-min="100" placeholder="Je conseille … parce que …"></textarea></div>
           </div>
         </div>
 
         <div class="q" id="Q12">
-          <div class="q-bar"><strong>Q12 · Ton conseil à Lina</strong><span>1,5 pt</span></div>
+          <div class="q-bar"><strong>Q12 · La formule est-elle rentable ?</strong><span>1 pt</span></div>
           <div class="q-body">
-            <p class="consigne hlz">Le prix de 9,90 € est-il un bon choix ? Calcule d'abord la part du coût matière dans le prix HT réel (en %), puis donne ton avis sous la forme d'un <b>argument complet</b> : une affirmation, une preuve chiffrée et un exemple.</p>
-            <textarea class="ta" id="ta_q12" data-k="q12" data-min="160" placeholder="Part du coût matière : …&#10;Affirmation : …&#10;Preuve : …&#10;Exemple : …"></textarea>
+            <p class="consigne hlz">Lina propose aussi une formule Piadina + tiramisu + citronnade (<button type="button" class="docref" data-doc="d5">📄 Doc 5</button>). Calcule :</p>
+            <div class="numrow">
+              <div class="num"><label for="n_fht">Prix HT de la formule<small>arrondi au centime</small></label><div class="inwrap"><input id="n_fht" data-k="q12_ht" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+              <div class="num"><label for="n_fcr">Coût de revient des trois produits<small>réunis</small></label><div class="inwrap"><input id="n_fcr" data-k="q12_cr" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+              <div class="num"><label for="n_fm">Marge de la formule<small>par formule vendue</small></label><div class="inwrap"><input id="n_fm" data-k="q12_marge" inputmode="decimal" autocomplete="off"><span>€</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q" id="Q13">
+          <div class="q-bar"><strong>Q13 · Ton conseil sur le prix</strong><span>1,5 pt</span></div>
+          <div class="q-body">
+            <p class="consigne hlz">Le prix de 9,90 € pour la Piadina est-il un bon choix ? Calcule d'abord la part du coût matière dans le prix HT réel (en %), puis donne ton avis sous la forme d'un <b>argument complet</b> : une affirmation, une preuve chiffrée et un exemple.</p>
+            <textarea class="ta" id="ta_q13" data-k="q13" data-min="160" placeholder="Part du coût matière : …&#10;Affirmation : …&#10;Preuve : …&#10;Exemple : …"></textarea>
           </div>
         </div>
         <div class="box" style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
@@ -644,6 +664,7 @@ body.prof .pen,body.prof .stu-only{display:none!important}
           <option value="d3">Doc 3 · Paroles d'équipe</option>
           <option value="d4">Doc 4 · Tableau de bord RH</option>
           <option value="d5">Doc 5 · Recette et tarifs</option>
+          <option value="d6">Doc 6 · Le 4e camion</option>
         </select>
       </div>
 
@@ -737,6 +758,7 @@ body.prof .pen,body.prof .stu-only{display:none!important}
           <div class="quote"><div class="av" style="background:#0F7472">SO</div><div class="bub"><div class="who">Sofia <small>cheffe du camion Campus</small></div><p>« À partir du mois prochain, on n'accepte plus que la carte bancaire. Je vous explique pourquoi : moins d'erreurs de caisse, un service plus rapide, et plus besoin d'aller à la banque le soir. »</p></div></div>
           <div class="quote"><div class="av" style="background:#D93A28">EQ</div><div class="bub"><div class="who">Yanis <small>équipier du camion Zone d'activités</small></div><p>« Depuis le départ de notre chef, on n'a plus personne sur place. Pour changer un fournisseur de pain, j'ai attendu deux semaines la réponse de Lina. Alors on fait des réunions pour savoir qui doit décider… et personne ne décide. »</p></div></div>
           <div class="quote"><div class="av" style="background:#5B4A9E">CC</div><div class="bub"><div class="who">Inès <small>cuisinière, cuisine centrale</small></div><p>« Nous, on ne sait jamais combien de sauce préparer : personne ne nous dit ce que les camions vont vendre. Le soir, on jette beaucoup. »</p></div></div>
+          <div class="quote"><div class="av" style="background:#13222C">LM</div><div class="bub"><div class="who">Lina Moreau <small>gérante, une semaine plus tard</small></div><p>« J'ai lu un article sur l'entreprise libérée. J'ai envie de supprimer les postes de chefs de camion : chaque équipe s'organiserait seule, choisirait ses horaires et ses fournisseurs, et moi je n'aurais plus à tout valider. »</p></div></div>
         </div>
       </section>
 
@@ -792,8 +814,39 @@ body.prof .pen,body.prof .stu-only{display:none!important}
               </table>
             </div>
           </div>
+          <div class="memo" style="background:#E8F4F3;border-left-color:var(--teal)"><b class="h" style="color:var(--teal)">La formule du midi</b>Piadina + tiramisu en pot + citronnade maison : <b>13,90 € TTC</b> (TVA 10 %).<br>Coûts de revient d'une portion : tiramisu <b>1,30 €</b> · citronnade <b>0,60 €</b> · Piadina : à calculer.</div>
           <div class="memo"><b class="h">Message de Lina</b>« J'applique toujours un coefficient de 2,5 sur le coût de revient. Mais je préfère afficher un prix qui donne envie : la Piadina sera à 9,90 € sur l'ardoise. Les concurrents de la gare vendent leurs sandwichs chauds entre 8,50 € et 10,50 €. »</div>
           <p class="src">Prix fictifs, ordres de grandeur.</p>
+        </div>
+      </section>
+
+      <section class="panel" data-p="d6">
+        <div class="p-head"><div class="p-num">D6</div><div><div class="p-kick">Document 6</div><h2>Où installer le quatrième camion ?</h2></div></div>
+        <div class="doc hlz">
+          <p>Lina a repéré deux emplacements. Avec Paul, le responsable achats, elle a noté chacun de 1 à 5 sur quatre critères, puis fixé un coefficient selon l'importance du critère.</p>
+          <div class="tablewrap" style="overflow-x:auto;margin-top:12px">
+            <table class="tarif">
+              <thead><tr><th>Critère</th><th class="r">Coefficient</th><th class="r">Hôpital Saint-Roch</th><th class="r">Parc d'activités Nord</th></tr></thead>
+              <tbody>
+                <tr><td>Passage le midi</td><td class="r">3</td><td class="r">5 / 5</td><td class="r">3 / 5</td></tr>
+                <tr><td>Peu de concurrents</td><td class="r">2</td><td class="r">2 / 5</td><td class="r">5 / 5</td></tr>
+                <tr><td>Coût de l'emplacement <small>(5 = pas cher)</small></td><td class="r">1</td><td class="r">2 / 5</td><td class="r">4 / 5</td></tr>
+                <tr><td>Budget des clients</td><td class="r">2</td><td class="r">3 / 5</td><td class="r">4 / 5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid2" style="margin-top:16px">
+            <div class="box" style="background:var(--surface-2)">
+              <h3>🏥 Hôpital Saint-Roch</h3>
+              <p>Personnel soignant, patients et visiteurs, <b>7 jours sur 7, midi et soir</b>. Une cafétéria est déjà installée dans le hall.</p>
+            </div>
+            <div class="box" style="background:var(--surface-2)">
+              <h3>🏢 Parc d'activités Nord</h3>
+              <p>1 200 salariés de bureau, aucun restaurant à moins de 10 minutes à pied. <b>Désert le soir et le week-end</b>, et pendant les trois semaines de fermeture d'août.</p>
+            </div>
+          </div>
+          <div class="memo"><b class="h">Rappel de Lina</b>« Le meilleur score n'est pas forcément la bonne réponse : il faut aussi regarder ce que la grille ne dit pas. »</div>
+          <p class="src">Lieux fictifs, situés à Bellerive.</p>
         </div>
       </section>
     </div>
@@ -872,7 +925,7 @@ body.prof .pen,body.prof .stu-only{display:none!important}
 /* =========================================================
    CONFIGURATION
    ========================================================= */
-const KEY="fta_eval_bb_v1";
+const KEY="fta_eval_bb_v2";
 const DURATION=60*60;           // secondes
 const MAX_EXITS=5;              // sorties avant remise automatique
 const PENALTY=0.5;              // points retirés par sortie
@@ -893,50 +946,28 @@ function num(v){if(v==null)return NaN;const s=String(v).replace(/\s|€|%/g,"").
 // Q1 – QCM : la bonne réponse est TOUJOURS l'option d'indice 0 dans les données.
 // L'ordre d'affichage est mélangé pour chaque élève (positions variées).
 const QCM=[
-  ["Pour parler d'organisation, il faut réunir à la fois…",
-   ["des personnes, un but commun, des moyens et des règles","un dirigeant, des salariés payés, un local et un budget","des clients, des produits, des prix et une marque connue","au moins dix membres, un statut officiel et un bureau"]],
-  ["« Servir 500 repas par jour d'ici juin 2027 » est…",
-   ["un objectif","une finalité","un style de direction","une division du travail"]],
   ["Le management stratégique…",
    ["engage l'avenir de l'organisation sur plusieurs années","organise le planning de l'équipe pour la semaine à venir","est décidé par les chefs d'équipe directement sur le terrain","se corrige facilement et rapidement en cas d'erreur commise"]],
-  ["« Tu gères, tu me diras. » Quel style de direction se cache derrière cette phrase ?",
-   ["délégatif","directif","persuasif","participatif"]],
-  ["Le taux de turnover se calcule ainsi :",
-   ["départs de l'année ÷ effectif moyen","jours d'absence ÷ jours théoriquement travaillés","effectif moyen ÷ nombre d'embauches de l'année","heures de réunion ÷ nombre total de salariés"]],
   ["La zone de chalandise d'un food truck, c'est…",
    ["la zone d'où vient la majorité de ses clients","l'emplacement autorisé par la mairie pour stationner","le secteur où se trouvent tous ses fournisseurs","l'ensemble des concurrents directs installés autour"]],
-  ["Un plat est vendu 12 € HT. Avec une TVA de 10 %, son prix TTC est de…",
-   ["13,20 €","12,10 €","13,00 €","10,80 €"]],
-  ["Dans une entreprise libérée, un risque fréquent est…",
-   ["la perte de repères sur qui décide","un nombre d'étages hiérarchiques qui augmente","un contrôle renforcé de chaque tâche réalisée","des consignes de travail de plus en plus précises"]]
-];
-const GESTES=["Animer","Contrôler","Décider","Fixer le cap","Organiser"];
-const Q2=[
-  ["« On avait prévu 120 Piadine ce midi, on en a vendu 85 : regardons ensemble pourquoi. »","Contrôler"],
-  ["« Cette année, notre cap : ouvrir un quatrième camion avant septembre. »","Fixer le cap"],
-  ["« Tu as l'air épuisé après ce rush. On prend cinq minutes pour en parler ? »","Animer"],
-  ["« Toi, tu tiens la caisse ; Maël, tu prépares les galettes ; moi, je m'occupe des boissons. »","Organiser"],
-  ["« Roquette ou salade ? On en parle depuis un mois : je tranche, ce sera la roquette. »","Décider"]
-];
-const ODE={O:"Offre",D:"Demande",E:"Environnement"};
-const Q3=[
-  ["Un camion de burgers s'installe chaque midi sur la place de la gare.","O"],
-  ["70 % des salariés interrogés veulent payer moins de 10 € leur déjeuner.","D"],
-  ["La mairie interdit les food trucks sur la place du marché le samedi.","E"],
-  ["Les étudiants viennent surtout manger entre 12 h et 12 h 30.","D"],
-  ["La boulangerie voisine propose une formule sandwich + boisson à 8 €.","O"],
-  ["Il pleut souvent en novembre et la fréquentation des camions baisse.","E"]
+  ["Pour un food truck de piadine, la cantine d'une entreprise voisine est…",
+   ["un concurrent indirect","un concurrent direct","un fournisseur du camion","un partenaire commercial"]],
+  ["Les plannings partagés, les réunions d'équipe et les procédures servent surtout à…",
+   ["faire s'emboîter des tâches séparées","découper l'activité en tâches différentes","contrôler les résultats en fin d'année","supprimer des étages hiérarchiques"]],
+  ["Sur une carte perceptuelle, une zone vide…",
+   ["peut être une opportunité si des clients y existent","est toujours la meilleure place à prendre sur le marché","prouve que le marché est saturé de concurrents","signale forcément une erreur de l'étude de marché"]],
+  ["Une association peut-elle réaliser des bénéfices ?",
+   ["oui, s'ils sont réinvestis dans son projet","non, c'est interdit par la loi française","oui, s'ils sont partagés entre tous ses membres","seulement si elle n'emploie aucun salarié"]]
 ];
 const TYPES=[["privee","Entreprise privée"],["asso","Association"],["publique","Organisation publique"]];
-const Q5=[
-  ["« Faire découvrir la street-food italienne avec des produits frais, même quand on n'a que 30 minutes pour déjeuner. »","F"],
-  ["« Atteindre 650 000 € de chiffre d'affaires en 2027. »","O"],
-  ["« Ramener le turnover sous 20 % d'ici décembre 2027. »","O"],
-  ["« Rendre la bonne cuisine accessible à tous ceux qui travaillent ou étudient à Bellerive. »","F"]
-];
-const FO={F:"Finalité",O:"Objectif"};
 const STYLES=[["directif","Directif"],["persuasif","Persuasif"],["participatif","Participatif"],["delegatif","Délégatif"]];
-const Q6=[["Lina Moreau, gérante","directif"],["Hugo, chef du camion Gare","participatif"],["Sofia, cheffe du camion Campus","persuasif"]];
+const Q4=[["Lina Moreau, gérante","directif"],["Hugo, chef du camion Gare","participatif"],["Sofia, cheffe du camion Campus","persuasif"]];
+const Q5=[
+  "Un vendredi midi, l'huile de la friteuse du camion Gare prend feu alors que la file d'attente est pleine.",
+  "Lucas arrive ce matin au camion Zone. Il n'a jamais tenu une caisse ni préparé une piadina.",
+  "Hugo, huit ans d'expérience en cuisine, doit créer la carte d'été de son camion."
+];
+const SITES=[["hopital","Hôpital Saint-Roch"],["nord","Parc d'activités Nord"]];
 // Q9 fiche technique : [ingrédient, unité, quantité attendue, prix unitaire, coût attendu]
 const FT=[
   ["Galette de piadina","pièce",1,0.40,0.40],
@@ -946,7 +977,8 @@ const FT=[
   ["Tomates séchées","kg",0.025,16.00,0.40],
   ["Huile d'olive","L",0.010,8.00,0.08]
 ];
-const ANS={cm:3.32,ch:0.38,cr:3.70,ht:9.25,ttc:10.175,htr:9.00,marge:5.30};
+const ANS={cm:3.32,ch:0.38,cr:3.70,ht:9.25,ttc:10.175,htr:9.00,marge:5.30,ga:27,gb:31,fht:12.636,fcr:5.60,fm:7.036};
+const AUTO_MAX=10.5, TEACH_MAX=9.5;
 
 /* =========================================================
    ÉTAT
@@ -973,6 +1005,7 @@ function makeOrder(){
 /* =========================================================
    CONSTRUCTION DES QUESTIONS
    ========================================================= */
+const chip=(name,val,label,big)=>"<label class='chip'"+(big?" style='font-size:15px;padding:8px 16px'":"")+"><input type='radio' name='"+name+"' value='"+val+"'>"+label+"</label>";
 function buildQuestions(){
   // Q1
   $("#qcmBox").innerHTML=QCM.map((q,i)=>{
@@ -980,16 +1013,14 @@ function buildQuestions(){
     return "<div class='qcm-item'><h4><span class='n'>"+(i+1)+"</span><span>"+esc(q[0])+"</span></h4><div class='opts' role='radiogroup' aria-label='Question "+(i+1)+"'>"+
       ord.map((oi,k)=>"<label class='opt'"+(oi===0?" data-ok":"")+"><input type='radio' name='q1_"+i+"' value='"+oi+"'><span class='l'>"+"ABCD"[k]+"</span><span>"+esc(q[1][oi])+"</span></label>").join("")+"</div></div>";
   }).join("");
-  // Q2
-  $("#q2Box").innerHTML=Q2.map((q,i)=>"<div class='mrow'><p class='hlz'>"+esc(q[0])+"</p><select class='sel' data-k='q2_"+i+"' aria-label='Geste pour la phrase "+(i+1)+"'><option value=''>— choisir le geste —</option>"+GESTES.map(g=>"<option>"+g+"</option>").join("")+"</select></div>").join("");
   // Q3
-  $("#q3Box").innerHTML=Q3.map((q,i)=>"<div class='card'><p class='hlz'><span class='k'>Info "+(i+1)+"</span>"+esc(q[0])+"</p><div class='chips'>"+Object.entries(ODE).map(([k,l])=>"<label class='chip'><input type='radio' name='q3_"+i+"' value='"+k+"'>"+l+"</label>").join("")+"</div></div>").join("");
+  $("#q3Chips").innerHTML=TYPES.map(([k,l])=>chip("q3_type",k,l,true)).join("");
   // Q4
-  $("#q4Chips").innerHTML=TYPES.map(([k,l])=>"<label class='chip' style='font-size:15px;padding:8px 16px'><input type='radio' name='q4_type' value='"+k+"'>"+l+"</label>").join("");
+  $("#q4Box").innerHTML=Q4.map((q,i)=>"<div class='card'><p><span class='k'>Manager "+(i+1)+"</span>"+esc(q[0])+"</p><div class='chips'>"+STYLES.map(([k,l])=>chip("q4_"+i,k,l)).join("")+"</div></div>").join("");
   // Q5
-  $("#q5Box").innerHTML=Q5.map((q,i)=>"<div class='card'><p class='hlz'><span class='k'>Phrase "+(i+1)+"</span>"+esc(q[0])+"</p><div class='chips'>"+Object.entries(FO).map(([k,l])=>"<label class='chip'><input type='radio' name='q5_"+i+"' value='"+k+"'>"+l+"</label>").join("")+"</div></div>").join("");
-  // Q6
-  $("#q6Box").innerHTML=Q6.map((q,i)=>"<div class='card'><p><span class='k'>Manager "+(i+1)+"</span>"+esc(q[0])+"</p><div class='chips'>"+STYLES.map(([k,l])=>"<label class='chip'><input type='radio' name='q6_"+i+"' value='"+k+"'>"+l+"</label>").join("")+"</div></div>").join("");
+  $("#q5Box").innerHTML=Q5.map((t,i)=>"<div class='card' style='margin-bottom:12px'><p class='hlz'><span class='k'>Situation "+"abc"[i]+"</span>"+esc(t)+"</p><div class='chips'>"+STYLES.map(([k,l])=>chip("q5_s_"+i,k,l)).join("")+"</div><textarea class='ta' data-k='q5_j_"+i+"' data-min='70' style='min-height:70px' aria-label='Justification situation "+"abc"[i]+"' placeholder='Parce que…'></textarea></div>").join("");
+  // Q11
+  $("#q11Chips").innerHTML=SITES.map(([k,l])=>chip("q11_choix",k,l,true)).join("");
   // Q9
   let h="<thead><tr><th style='width:30%'>Ingrédient</th><th class='r' style='width:16%'>Quantité</th><th style='width:9%'>Unité</th><th class='r' style='width:19%'>Prix unitaire (€)</th><th class='r' style='width:19%'>Coût (€)</th></tr></thead><tbody>";
   FT.forEach((r,i)=>{h+="<tr><td><b>"+esc(r[0])+"</b></td><td><input data-k='q9_q_"+i+"' inputmode='decimal' aria-label='Quantité "+esc(r[0])+"' autocomplete='off'></td><td class='u'>"+r[1]+"</td><td><input data-k='q9_p_"+i+"' inputmode='decimal' aria-label='Prix unitaire "+esc(r[0])+"' autocomplete='off'></td><td class='graded'><input data-k='q9_c_"+i+"' inputmode='decimal' aria-label='Coût "+esc(r[0])+"' autocomplete='off'></td></tr>"});
@@ -1003,19 +1034,18 @@ function buildQuestions(){
    CORRECTION AUTOMATIQUE
    ========================================================= */
 const near=(v,t,tol)=>isFinite(num(v))&&Math.abs(num(v)-t)<=tol+1e-9;
+const C=0.011;
 function grade(){
   const a=S.answers,r={};
   r.q1=QCM.reduce((s,_,i)=>s+(a["q1_"+i]==="0"?0.5:0),0);
-  r.q2=Q2.reduce((s,q,i)=>s+(a["q2_"+i]===q[1]?0.5:0),0);
-  r.q3=Q3.reduce((s,q,i)=>s+(a["q3_"+i]===q[1]?0.25:0),0);
-  r.q4=a.q4_type==="privee"?0.5:0;
-  r.q5=Q5.reduce((s,q,i)=>s+(a["q5_"+i]===q[1]?0.25:0),0);
-  r.q6=Q6.reduce((s,q,i)=>s+(a["q6_"+i]===q[1]?0.5:0),0);
-  r.q7=(near(a.q7_turn,50,0.5)?0.5:0)+(near(a.q7_abs,9.09,0.12)?0.5:0);
-  r.q9=FT.reduce((s,f,i)=>s+(near(a["q9_c_"+i],f[4],0.011)?0.25:0),0)+(near(a.q9_cm,ANS.cm,0.011)?0.5:0)+(near(a.q9_cr,ANS.cr,0.011)?0.5:0);
-  r.q10=(near(a.q10_ht,ANS.ht,0.011)?0.5:0)+(near(a.q10_ttc,ANS.ttc,0.011)?0.5:0);
-  r.q11=(near(a.q11_htr,ANS.htr,0.011)?0.5:0)+(near(a.q11_marge,ANS.marge,0.011)?0.5:0);
-  r.auto=["q1","q2","q3","q4","q5","q6","q7","q9","q10","q11"].reduce((s,k)=>s+r[k],0);
+  r.q3=a.q3_type==="privee"?0.5:0;
+  r.q4=Q4.reduce((s,q,i)=>s+(a["q4_"+i]===q[1]?0.5:0),0);
+  r.q6=(near(a.q6_turn,50,0.5)?0.5:0)+(near(a.q6_abs,9.09,0.12)?0.5:0);
+  r.q9=FT.reduce((s,f,i)=>s+(near(a["q9_c_"+i],f[4],C)?0.25:0),0)+(near(a.q9_cm,ANS.cm,C)?0.25:0)+(near(a.q9_cr,ANS.cr,C)?0.25:0);
+  r.q10=["ht","ttc","htr","marge"].reduce((s,k)=>s+(near(a["q10_"+k],ANS[k],C)?0.25:0),0);
+  r.q11=(near(a.q11_a,ANS.ga,0)?0.25:0)+(near(a.q11_b,ANS.gb,0)?0.25:0);
+  r.q12=(near(a.q12_ht,ANS.fht,C)?0.25:0)+(near(a.q12_cr,ANS.fcr,C)?0.25:0)+(near(a.q12_marge,ANS.fm,C)?0.5:0);
+  r.auto=["q1","q3","q4","q6","q9","q10","q11","q12"].reduce((s,k)=>s+r[k],0);
   r.pen=Math.min(S.exits*PENALTY,20);
   return r;
 }
@@ -1025,9 +1055,10 @@ function grade(){
    ========================================================= */
 function units(){
   const u=[];
-  QCM.forEach((_,i)=>u.push("q1_"+i));Q2.forEach((_,i)=>u.push("q2_"+i));Q3.forEach((_,i)=>u.push("q3_"+i));
-  u.push("q4_type","q4_just");Q5.forEach((_,i)=>u.push("q5_"+i));Q6.forEach((_,i)=>u.push("q6_"+i));
-  u.push("q7_turn","q7_abs","q8");FT.forEach((_,i)=>u.push("q9_c_"+i));u.push("q9_cm","q9_cr","q10_ht","q10_ttc","q11_htr","q11_marge","q12");
+  QCM.forEach((_,i)=>u.push("q1_"+i));u.push("q2_a","q2_b","q3_type","q3_just");
+  Q4.forEach((_,i)=>u.push("q4_"+i));Q5.forEach((_,i)=>u.push("q5_s_"+i,"q5_j_"+i));
+  u.push("q6_turn","q6_abs","q7","q8");FT.forEach((_,i)=>u.push("q9_c_"+i));
+  u.push("q9_cm","q9_cr","q10_ht","q10_ttc","q10_htr","q10_marge","q11_a","q11_b","q11_choix","q11_just","q12_ht","q12_cr","q12_marge","q13");
   return u;
 }
 function answeredCount(){const a=S.answers;return units().filter(k=>a[k]!=null&&String(a[k]).trim()!=="").length}
@@ -1186,20 +1217,20 @@ $("#btnProf").addEventListener("click",()=>{
 $("#tCorr").addEventListener("click",()=>{document.body.classList.toggle("corr");$("#tCorr").classList.toggle("on",document.body.classList.contains("corr"))});
 function corr(id,html){const q=document.querySelector("#"+id+" .q-body");if(!q)return;const d=document.createElement("div");d.className="corr-box";d.innerHTML="<h5>CORRIGÉ</h5>"+html;q.appendChild(d)}
 function buildCorr(){
-  corr("Q1","<p>Bonnes réponses repérées en vert ci-dessus (0,5 pt chacune).</p><ul><li>1. Personnes, but commun, moyens, règles</li><li>2. Un objectif (chiffré et daté)</li><li>3. Engage l'avenir sur plusieurs années</li><li>4. Délégatif</li><li>5. Départs ÷ effectif moyen</li><li>6. Zone d'où vient la majorité des clients</li><li>7. 12 × 1,10 = 13,20 €</li><li>8. Perte de repères sur qui décide</li></ul>");
-  corr("Q2","<ul>"+Q2.map(q=>"<li>"+esc(q[0])+" → <b>"+q[1]+"</b></li>").join("")+"</ul><p>0,5 pt par association.</p>");
-  corr("Q3","<ul>"+Q3.map(q=>"<li>"+esc(q[0])+" → <b>"+ODE[q[1]]+"</b></li>").join("")+"</ul><p>0,25 pt par information.</p>");
-  corr("Q4","<p><b>Entreprise privée</b> (0,5 pt, automatique).</p><p>Justification attendue (0,5 pt, à noter) : c'est une SAS ; elle vit du chiffre d'affaires payé par ses clients (590 000 €) ; elle doit dégager un bénéfice pour durer et investir. Un seul élément précis suffit.</p>");
-  corr("Q5","<ul>"+Q5.map(q=>"<li>"+esc(q[0])+" → <b>"+FO[q[1]]+"</b></li>").join("")+"</ul><p>Les objectifs sont chiffrés et datés ; les finalités se racontent. 0,25 pt par phrase.</p>");
-  corr("Q6","<ul><li>Lina → <b>Directif</b> : elle décide seule, consignes et délai, « sans discussion ».</li><li>Hugo → <b>Participatif</b> : avis de chacun, décision commune.</li><li>Sofia → <b>Persuasif</b> : elle décide mais explique pourquoi.</li></ul><p>0,5 pt par manager.</p>");
-  corr("Q7","<table><tr><td>Turnover</td><td>7 ÷ 14 × 100</td><td class='r'><b>50 %</b></td></tr><tr><td>Absentéisme</td><td>280 ÷ 3 080 × 100</td><td class='r'><b>9,1 %</b></td></tr></table><p>Tolérances : 49,5 à 50,5 % et 9,0 à 9,2 %. 0,5 pt chacun.</p>");
-  corr("Q8","<p><b>a) Deux signes parmi (0,5 pt chacun) :</b></p><ul><li>Poste de chef du camion Zone vacant : ses 3 équipiers dépendent directement de la gérante, qui encadre déjà 5 personnes (8 personnes en direct).</li><li>Cuisine centrale isolée sur l'organigramme : rattachée à personne, aucune coordination avec les camions, d'où le gaspillage (Doc 3, Inès).</li><li>Décisions bloquées : 12 jours pour obtenir une réponse de la gérante.</li><li>Réunionite : 6 h par semaine contre 2 h.</li><li>Turnover de 50 % (7 départs contre 2) et absentéisme de 9,1 %.</li></ul><p><b>b) Symptôme → cause (0,5 pt) :</b> par exemple, la réunionite et les décisions qui traînent sont des symptômes ; la cause probable est une gérante débordée qui centralise toutes les décisions (commandes, plannings, recettes) et l'absence de chef sur la zone d'activités. Accepter aussi : gaspillage (symptôme) → manque de coordination entre cuisine et camions (cause).</p>");
-  corr("Q9","<table><tr><th>Ingrédient</th><th>Quantité</th><th>Prix unitaire</th><th>Coût</th></tr>"+FT.map(f=>"<tr><td>"+esc(f[0])+"</td><td class='r'>"+fr(f[2],3).replace(/0+$/,"").replace(/,$/,"")+" "+f[1]+"</td><td class='r'>"+fr(f[3])+" €</td><td class='r'><b>"+fr(f[4])+" €</b></td></tr>").join("")+"<tr><td colspan='3'><b>Coût matière</b></td><td class='r'><b>3,32 €</b></td></tr><tr><td colspan='3'>Emballage et charges (0,22 + 0,03 + 0,13)</td><td class='r'>0,38 €</td></tr><tr><td colspan='3'><b>Coût de revient</b></td><td class='r'><b>3,70 €</b></td></tr></table><p>0,25 pt par coût d'ingrédient, 0,5 pt pour le coût matière, 0,5 pt pour le coût de revient. Les colonnes quantité et prix unitaire ne sont pas notées.</p>");
-  corr("Q10","<table><tr><td>Prix HT</td><td>3,70 × 2,5</td><td class='r'><b>9,25 €</b></td></tr><tr><td>Prix TTC</td><td>9,25 × 1,10 = 10,175</td><td class='r'><b>10,18 €</b> (10,17 accepté)</td></tr></table>");
-  corr("Q11","<table><tr><td>Prix HT réel</td><td>9,90 ÷ 1,10</td><td class='r'><b>9,00 €</b></td></tr><tr><td>Marge par portion</td><td>9,00 − 3,70</td><td class='r'><b>5,30 €</b></td></tr></table>");
-  corr("Q12","<p><b>Calcul (0,5 pt) :</b> 3,32 ÷ 9,00 × 100 ≈ <b>36,9 %</b>, juste au-dessus de la zone conseillée de 25 à 35 % (zone « limite »).</p><p><b>Argument complet (0,5 pt) :</b> affirmation + preuve chiffrée + exemple, clairement identifiables.</p><p><b>Cohérence (0,5 pt) :</b> les deux avis sont acceptés s'ils sont justifiés. Par exemple : 9,90 € est un bon choix commercial (prix psychologique, dans la fourchette des concurrents de la gare, 8,50 à 10,50 €, marge de 5,30 € positive), mais un peu juste, puisque le coût matière dépasse 35 %. Ou bien : il vaudrait mieux afficher 10,50 € (ratio de 34,8 %) ou réduire le jambon cru.</p>");
+  corr("Q1","<p>Bonnes réponses repérées en vert ci-dessus (0,5 pt chacune).</p><ul><li>1. Engage l'avenir sur plusieurs années</li><li>2. Zone d'où vient la majorité des clients</li><li>3. Concurrent indirect (produit différent, même besoin : manger vite le midi)</li><li>4. Faire s'emboîter des tâches séparées (coordination)</li><li>5. Opportunité si des clients y existent</li><li>6. Oui, s'ils sont réinvestis dans son projet (le partage est interdit)</li></ul>");
+  corr("Q2","<p><b>1 pt par objectif</b> : Décrit (0,25), Dosé avec un chiffre (0,25), Daté avec une échéance (0,25), réaliste et cohérent avec l'intention (0,25).</p><ul><li>a) Exemple : « Ramener l'attente moyenne au guichet sous 5 minutes entre 12 h et 13 h d'ici mars 2027. »</li><li>b) Exemple : « Faire passer le turnover de 50 % à 25 % d'ici juin 2027. » ou « Ne pas avoir plus de 3 départs sur l'année 2027. »</li></ul>");
+  corr("Q3","<p>a) <b>Entreprise privée</b> (0,5 pt, automatique) : SAS qui vit du chiffre d'affaires payé par ses clients et doit dégager un bénéfice.</p><p>b) <b>1 pt, à noter</b> :</p><ul><li>Finalité (0,25) : « Faire découvrir la street-food italienne… » ou « Rendre la bonne cuisine accessible… ».</li><li>Objectif (0,25) : « Atteindre 650 000 € de CA en 2027 » ou « Ramener le turnover sous 20 % d'ici décembre 2027 ».</li><li>Différence (0,5) : la finalité est la raison d'être, permanente et non mesurable ; l'objectif est un résultat précis, chiffré et daté.</li></ul>");
+  corr("Q4","<ul><li>Lina → <b>Directif</b> : elle décide seule, impose consignes et délai, « sans discussion ».</li><li>Hugo → <b>Participatif</b> : avis de chacun, décision commune.</li><li>Sofia → <b>Persuasif</b> : elle décide mais explique pourquoi.</li></ul><p>0,5 pt par manager.</p>");
+  corr("Q5","<p><b>0,5 pt par situation</b> : style cohérent et justification reliée à l'urgence, à l'expérience ou à l'enjeu. Une autre réponse bien justifiée est acceptée.</p><ul><li>a) <b>Directif</b> : urgence et sécurité, pas le temps de discuter, il faut des consignes claires et immédiates.</li><li>b) <b>Directif</b> (ou persuasif) : Lucas n'a aucune expérience, il a besoin de consignes précises ; le délégatif le noierait.</li><li>c) <b>Délégatif</b> (ou participatif) : Hugo est très expérimenté, l'enjeu est maîtrisé, le diriger de façon directive l'infantiliserait.</li></ul>");
+  corr("Q6","<table><tr><td>Turnover</td><td>7 ÷ 14 × 100</td><td class='r'><b>50 %</b></td></tr><tr><td>Absentéisme</td><td>280 ÷ 3 080 × 100</td><td class='r'><b>9,1 %</b></td></tr></table><p>Tolérances : 49,5 à 50,5 % et 9,0 à 9,2 %. 0,5 pt chacun.</p>");
+  corr("Q7","<p>a) <b>0,25 pt</b> : une organisation qui supprime une grande partie du contrôle et des règles, fait confiance a priori, et laisse les salariés choisir comment atteindre l'objectif.</p><p>b) <b>Avantage (0,5 pt)</b>, relié au cas : Lina ne validerait plus tout, donc les décisions seraient plus rapides (12 jours actuellement) ; plus d'engagement et de responsabilité des équipes, ce qui peut réduire le turnover.</p><p><b>Deux risques (0,75 pt)</b>, reliés au cas : perte de repères (sur la zone, l'équipe n'a déjà plus de chef et « personne ne décide ») ; décisions qui n'arrivent jamais et réunionite accrue (déjà 6 h par semaine) ; charge mentale pour les équipiers ; isolement des nouveaux (Lucas) ; autonomie de façade si Lina garde le contrôle (style directif).</p><p>Un risque cité sans lien avec Bitume &amp; Basilic : moitié des points.</p>");
+  corr("Q8","<p><b>a) Deux signes (0,25 pt chacun)</b> parmi :</p><ul><li>Poste de chef du camion Zone vacant : ses 3 équipiers dépendent directement de la gérante, qui encadre déjà 5 personnes (8 en direct).</li><li>Cuisine centrale isolée : rattachée à personne, sans coordination avec les camions, d'où le gaspillage (Inès).</li><li>Décisions bloquées : 12 jours pour obtenir une réponse.</li><li>Réunionite : 6 h par semaine contre 2 h.</li><li>Turnover de 50 % et absentéisme de 9,1 %.</li></ul><p><b>b) Symptôme → cause (0,5 pt)</b> : par exemple, réunionite et décisions bloquées (symptômes) → gérante débordée qui centralise toutes les décisions, et absence de chef sur la zone (cause). Accepter aussi : gaspillage → manque de coordination entre cuisine et camions.</p>");
+  corr("Q9","<table><tr><th>Ingrédient</th><th>Quantité</th><th>Prix unitaire</th><th>Coût</th></tr>"+FT.map(f=>"<tr><td>"+esc(f[0])+"</td><td class='r'>"+String(f[2]).replace(".",",")+" "+f[1]+"</td><td class='r'>"+fr(f[3])+" €</td><td class='r'><b>"+fr(f[4])+" €</b></td></tr>").join("")+"<tr><td colspan='3'><b>Coût matière</b></td><td class='r'><b>3,32 €</b></td></tr><tr><td colspan='3'>Emballage et charges (0,22 + 0,03 + 0,13)</td><td class='r'>0,38 €</td></tr><tr><td colspan='3'><b>Coût de revient</b></td><td class='r'><b>3,70 €</b></td></tr></table><p>0,25 pt par coût d'ingrédient, 0,25 pt pour le coût matière, 0,25 pt pour le coût de revient.</p>");
+  corr("Q10","<table><tr><td>Prix HT</td><td>3,70 × 2,5</td><td class='r'><b>9,25 €</b></td></tr><tr><td>Prix TTC</td><td>9,25 × 1,10 = 10,175</td><td class='r'><b>10,18 €</b> (10,17 accepté)</td></tr><tr><td>Prix HT réel</td><td>9,90 ÷ 1,10</td><td class='r'><b>9,00 €</b></td></tr><tr><td>Marge par portion</td><td>9,00 − 3,70</td><td class='r'><b>5,30 €</b></td></tr></table><p>0,25 pt par résultat.</p>");
+  corr("Q11","<table><tr><td>Hôpital</td><td>5×3 + 2×2 + 2×1 + 3×2</td><td class='r'><b>27 / 40</b></td></tr><tr><td>Parc Nord</td><td>3×3 + 5×2 + 4×1 + 4×2</td><td class='r'><b>31 / 40</b></td></tr></table><p>0,25 pt par total (automatique).</p><p><b>Justification (1 pt, à noter)</b> : les deux choix sont acceptés. Score cité et comparé (0,5) + au moins une information hors grille bien utilisée (0,5).</p><ul><li>Parc Nord : meilleur score, aucune concurrence, clientèle au budget correct… mais désert le soir, le week-end et en août.</li><li>Hôpital : score plus faible, mais activité 7 jours sur 7, midi et soir, donc plus de jours de vente sur l'année.</li></ul>");
+  corr("Q12","<table><tr><td>Prix HT de la formule</td><td>13,90 ÷ 1,10</td><td class='r'><b>12,64 €</b> (12,63 accepté)</td></tr><tr><td>Coût de revient total</td><td>3,70 + 1,30 + 0,60</td><td class='r'><b>5,60 €</b></td></tr><tr><td>Marge de la formule</td><td>12,64 − 5,60</td><td class='r'><b>7,04 €</b> (7,03 accepté)</td></tr></table><p>La formule est rentable : elle reste largement au-dessus des coûts de revient réunis.</p>");
+  corr("Q13","<p><b>Calcul (0,5 pt)</b> : 3,32 ÷ 9,00 × 100 ≈ <b>36,9 %</b>, juste au-dessus de la zone conseillée de 25 à 35 %.</p><p><b>Argument complet (0,5 pt)</b> : affirmation, preuve chiffrée et exemple clairement identifiables.</p><p><b>Cohérence (0,5 pt)</b> : les deux avis sont acceptés s'ils sont justifiés. 9,90 € est un bon prix commercial (prix psychologique, dans la fourchette des concurrents de 8,50 à 10,50 €, marge de 5,30 €), mais un peu juste, car le coût matière dépasse 35 %. Ou : afficher 10,50 € (ratio de 34,8 %) ou réduire la quantité de jambon cru.</p>");
 }
-
 /* =========================================================
    REMISE ET FIN
    ========================================================= */
@@ -1251,47 +1282,51 @@ function val(v,unit){return v&&String(v).trim()?esc(v)+(unit?" "+unit:""):"<span
 function pts(p,max){return frp(p)+" / "+frp(max)}
 function buildPrint(){
   const a=S.answers,g=grade();
-  const teachMax=3.5;
+  const row=(label,v,unit,p)=>"<tr><td>"+label+"</td><td class='r'>"+val(v,unit)+"</td><td class='r'>"+p+"</td></tr>";
+  const ok=(c,p)=>c?frp(p).replace(".",","):"0";
+  const styleName=k=>(STYLES.find(s=>s[0]===k)||[])[1];
   let h="";
   h+="<div class='pc-head'><div><h1>Food Truck Academy · Évaluation</h1><div class='sub'>Management et gestion · Seconde · Cas Bitume &amp; Basilic · Durée 1 h · /20</div></div>";
   h+="<div class='pc-id'><b>"+esc(S.prenom)+" "+esc(S.nom.toUpperCase())+"</b><br>"+(S.classe?"Classe : "+esc(S.classe)+"<br>":"")+"Le "+new Date(S.startedAt).toLocaleDateString("fr-FR")+" · début "+new Date(S.startedAt).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"})+"<br>Temps utilisé : "+fmtDur(S.endedAt-S.startedAt)+"</div></div>";
-  h+="<div class='pc-sum'><div><b>"+frp(g.auto)+" / 16,5</b><span>partie corrigée automatiquement</span></div><div><b>…… / 3,5</b><span>réponses rédigées (Q4, Q8, Q12)</span></div><div><b>−"+frp(g.pen)+"</b><span>"+S.exits+" sortie(s) du plein écran</span></div><div><b>"+answeredCount()+" / "+units().length+"</b><span>réponses données</span></div><div class='fin'><b>…… / 20</b><span>note finale</span></div></div>";
+  h+="<div class='pc-sum'><div><b>"+frp(g.auto)+" / "+frp(AUTO_MAX)+"</b><span>partie corrigée automatiquement</span></div><div><b>…… / "+frp(TEACH_MAX)+"</b><span>réponses rédigées</span></div><div><b>"+(g.pen?"−"+frp(g.pen):"0")+"</b><span>"+S.exits+" sortie(s) du plein écran</span></div><div><b>"+answeredCount()+" / "+units().length+"</b><span>réponses données</span></div><div class='fin'><b>…… / 20</b><span>note finale</span></div></div>";
   h+="<div class='pc-log'><b>Remise :</b> "+esc(S.endReason)+(S.log.length?" · <b>Sorties :</b> "+S.log.map(l=>l.t+" ("+esc(l.r==="blur"?"clic hors de la page ou autre fenêtre":l.r)+")").join(" ; "):" · Aucune sortie du plein écran.")+"</div>";
 
-  // Partie 1
-  h+="<div class='pc-part'>PARTIE 1 · LES NOTIONS DU COURS · 8 PTS</div>";
-  h+="<div class='pc-q'><h3><span>Q1 · Questionnaire express</span><span class='p'>"+pts(g.q1,4)+"</span></h3><table><tr><th>Question</th><th>Réponse choisie</th><th>Pts</th></tr>"+
+  // PARTIE 1
+  h+="<div class='pc-part'>PARTIE 1 · LES NOTIONS DU COURS · 5 PTS</div>";
+  h+="<div class='pc-q'><h3><span>Q1 · Questionnaire express</span><span class='p'>"+pts(g.q1,3)+"</span></h3><table><tr><th>Question</th><th>Réponse choisie</th><th>Pts</th></tr>"+
     QCM.map((q,i)=>{const v=a["q1_"+i];return "<tr><td>"+(i+1)+". "+esc(q[0])+"</td><td>"+(v!=null?esc(q[1][+v]):"<span class='pc-empty'>vide</span>")+"</td><td class='r'>"+(v==="0"?"0,5":"0")+"</td></tr>"}).join("")+"</table></div>";
-  h+="<div class='pc-q'><h3><span>Q2 · Les cinq gestes du manager</span><span class='p'>"+pts(g.q2,2.5)+"</span></h3><table><tr><th>Phrase</th><th>Geste choisi</th><th>Pts</th></tr>"+
-    Q2.map((q,i)=>"<tr><td>"+esc(q[0])+"</td><td>"+val(a["q2_"+i])+"</td><td class='r'>"+(a["q2_"+i]===q[1]?"0,5":"0")+"</td></tr>").join("")+"</table></div>";
-  h+="<div class='pc-q'><h3><span>Q3 · Offre, demande ou environnement</span><span class='p'>"+pts(g.q3,1.5)+"</span></h3><table><tr><th>Information</th><th>Classement</th><th>Pts</th></tr>"+
-    Q3.map((q,i)=>"<tr><td>"+esc(q[0])+"</td><td>"+val(ODE[a["q3_"+i]])+"</td><td class='r'>"+(a["q3_"+i]===q[1]?"0,25":"0")+"</td></tr>").join("")+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q2 · La règle des 3 D</span><span class='p'>…… / 2</span></h3><div class='st'>a) « Il faudrait que les clients attendent moins le midi. »</div>"+txt(a.q2_a)+"<div class='st' style='margin-top:6px'>b) « On aimerait que l'équipe reste plus longtemps chez nous. »</div>"+txt(a.q2_b)+"</div>";
 
-  // Partie 2
-  h+="<div class='pc-part'>PARTIE 2 · QUI COMMANDE CHEZ BITUME &amp; BASILIC ? · 6 PTS</div>";
-  const tName=(TYPES.find(t=>t[0]===a.q4_type)||[])[1];
-  h+="<div class='pc-q'><h3><span>Q4 · Type d'organisation</span><span class='p'>"+frp(g.q4)+" / 0,5 + …… / 0,5</span></h3><div class='st'>Type choisi : <b>"+val(tName)+"</b></div><div class='st'>Justification :</div>"+txt(a.q4_just)+"<div class='pc-teach'>Justification à évaluer par l'enseignant : …… / 0,5</div></div>";
-  h+="<div class='pc-q'><h3><span>Q5 · Finalité ou objectif</span><span class='p'>"+pts(g.q5,1)+"</span></h3><table><tr><th>Phrase</th><th>Réponse</th><th>Pts</th></tr>"+
-    Q5.map((q,i)=>"<tr><td>"+esc(q[0])+"</td><td>"+val(FO[a["q5_"+i]])+"</td><td class='r'>"+(a["q5_"+i]===q[1]?"0,25":"0")+"</td></tr>").join("")+"</table></div>";
-  h+="<div class='pc-q'><h3><span>Q6 · Styles de direction</span><span class='p'>"+pts(g.q6,1.5)+"</span></h3><table><tr><th>Manager</th><th>Style choisi</th><th>Pts</th></tr>"+
-    Q6.map((q,i)=>"<tr><td>"+esc(q[0])+"</td><td>"+val((STYLES.find(s=>s[0]===a["q6_"+i])||[])[1])+"</td><td class='r'>"+(a["q6_"+i]===q[1]?"0,5":"0")+"</td></tr>").join("")+"</table></div>";
-  h+="<div class='pc-q'><h3><span>Q7 · Indicateurs</span><span class='p'>"+pts(g.q7,1)+"</span></h3><table><tr><th>Indicateur</th><th>Réponse</th><th>Pts</th></tr><tr><td>Taux de turnover</td><td class='r'>"+val(a.q7_turn,"%")+"</td><td class='r'>"+(near(a.q7_turn,50,0.5)?"0,5":"0")+"</td></tr><tr><td>Taux d'absentéisme</td><td class='r'>"+val(a.q7_abs,"%")+"</td><td class='r'>"+(near(a.q7_abs,9.09,0.12)?"0,5":"0")+"</td></tr></table></div>";
-  h+="<div class='pc-q'><h3><span>Q8 · Diagnostic</span><span class='p'>…… / 1,5</span></h3>"+txt(a.q8)+"</div>";
+  // PARTIE 2
+  h+="<div class='pc-part'>PARTIE 2 · QUI COMMANDE CHEZ BITUME &amp; BASILIC ? · 8 PTS</div>";
+  h+="<div class='pc-q'><h3><span>Q3 · Organisation, finalité et objectif</span><span class='p'>"+frp(g.q3)+" / 0,5 + …… / 1</span></h3><div class='st'>a) Type choisi : <b>"+val((TYPES.find(t=>t[0]===a.q3_type)||[])[1])+"</b></div><div class='st'>b) Finalité, objectif et différence :</div>"+txt(a.q3_just)+"</div>";
+  h+="<div class='pc-q'><h3><span>Q4 · Styles de direction</span><span class='p'>"+pts(g.q4,1.5)+"</span></h3><table><tr><th>Manager</th><th>Style choisi</th><th>Pts</th></tr>"+
+    Q4.map((q,i)=>"<tr><td>"+esc(q[0])+"</td><td>"+val(styleName(a["q4_"+i]))+"</td><td class='r'>"+(a["q4_"+i]===q[1]?"0,5":"0")+"</td></tr>").join("")+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q5 · Quel style pour quelle situation ?</span><span class='p'>…… / 1,5</span></h3><table><tr><th style='width:42%'>Situation</th><th style='width:14%'>Style</th><th>Justification</th></tr>"+
+    Q5.map((t,i)=>"<tr><td>"+"abc"[i]+") "+esc(t)+"</td><td>"+val(styleName(a["q5_s_"+i]))+"</td><td style='white-space:pre-wrap'>"+(a["q5_j_"+i]&&a["q5_j_"+i].trim()?esc(a["q5_j_"+i]):"<span class='pc-empty'>vide</span>")+"</td></tr>").join("")+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q6 · Indicateurs</span><span class='p'>"+pts(g.q6,1)+"</span></h3><table>"+row("Taux de turnover",a.q6_turn,"%",ok(near(a.q6_turn,50,0.5),0.5))+row("Taux d'absentéisme",a.q6_abs,"%",ok(near(a.q6_abs,9.09,0.12),0.5))+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q7 · Libérer l'entreprise ?</span><span class='p'>…… / 1,5</span></h3>"+txt(a.q7)+"</div>";
+  h+="<div class='pc-q'><h3><span>Q8 · Diagnostic</span><span class='p'>…… / 1</span></h3>"+txt(a.q8)+"</div>";
 
-  // Partie 3
-  h+="<div class='pc-part'>PARTIE 3 · COMBIEN COÛTE LA PIADINA ? · 6 PTS</div>";
-  h+="<div class='pc-q'><h3><span>Q9 · Fiche technique</span><span class='p'>"+pts(g.q9,2.5)+"</span></h3><table><tr><th>Ingrédient</th><th>Quantité</th><th>Unité</th><th>Prix unitaire</th><th>Coût</th><th>Pts</th></tr>"+
-    FT.map((f,i)=>"<tr><td>"+esc(f[0])+"</td><td class='r'>"+val(a["q9_q_"+i])+"</td><td>"+f[1]+"</td><td class='r'>"+val(a["q9_p_"+i])+"</td><td class='r'>"+val(a["q9_c_"+i],"€")+"</td><td class='r'>"+(near(a["q9_c_"+i],f[4],0.011)?"0,25":"0")+"</td></tr>").join("")+
-    "<tr><td colspan='4'><b>Coût matière</b></td><td class='r'>"+val(a.q9_cm,"€")+"</td><td class='r'>"+(near(a.q9_cm,ANS.cm,0.011)?"0,5":"0")+"</td></tr>"+
+  // PARTIE 3
+  h+="<div class='pc-part'>PARTIE 3 · LA PIADINA ET LE QUATRIÈME CAMION · 7 PTS</div>";
+  h+="<div class='pc-q'><h3><span>Q9 · Fiche technique</span><span class='p'>"+pts(g.q9,2)+"</span></h3><table><tr><th>Ingrédient</th><th>Quantité</th><th>Unité</th><th>Prix unitaire</th><th>Coût</th><th>Pts</th></tr>"+
+    FT.map((f,i)=>"<tr><td>"+esc(f[0])+"</td><td class='r'>"+val(a["q9_q_"+i])+"</td><td>"+f[1]+"</td><td class='r'>"+val(a["q9_p_"+i])+"</td><td class='r'>"+val(a["q9_c_"+i],"€")+"</td><td class='r'>"+ok(near(a["q9_c_"+i],f[4],C),0.25)+"</td></tr>").join("")+
+    "<tr><td colspan='4'><b>Coût matière</b></td><td class='r'>"+val(a.q9_cm,"€")+"</td><td class='r'>"+ok(near(a.q9_cm,ANS.cm,C),0.25)+"</td></tr>"+
     "<tr><td colspan='4'>Emballage et autres charges</td><td class='r'>"+val(a.q9_ch,"€")+"</td><td class='r'>–</td></tr>"+
-    "<tr><td colspan='4'><b>Coût de revient</b></td><td class='r'>"+val(a.q9_cr,"€")+"</td><td class='r'>"+(near(a.q9_cr,ANS.cr,0.011)?"0,5":"0")+"</td></tr></table></div>";
-  h+="<div class='pc-q'><h3><span>Q10 · Prix de vente calculé</span><span class='p'>"+pts(g.q10,1)+"</span></h3><table><tr><td>Prix de vente HT (coefficient 2,5)</td><td class='r'>"+val(a.q10_ht,"€")+"</td><td class='r'>"+(near(a.q10_ht,ANS.ht,0.011)?"0,5":"0")+"</td></tr><tr><td>Prix de vente TTC</td><td class='r'>"+val(a.q10_ttc,"€")+"</td><td class='r'>"+(near(a.q10_ttc,ANS.ttc,0.011)?"0,5":"0")+"</td></tr></table></div>";
-  h+="<div class='pc-q'><h3><span>Q11 · Prix affiché 9,90 €</span><span class='p'>"+pts(g.q11,1)+"</span></h3><table><tr><td>Prix HT réellement encaissé</td><td class='r'>"+val(a.q11_htr,"€")+"</td><td class='r'>"+(near(a.q11_htr,ANS.htr,0.011)?"0,5":"0")+"</td></tr><tr><td>Marge par portion</td><td class='r'>"+val(a.q11_marge,"€")+"</td><td class='r'>"+(near(a.q11_marge,ANS.marge,0.011)?"0,5":"0")+"</td></tr></table></div>";
-  h+="<div class='pc-q'><h3><span>Q12 · Conseil argumenté</span><span class='p'>…… / 1,5</span></h3>"+txt(a.q12)+"</div>";
+    "<tr><td colspan='4'><b>Coût de revient</b></td><td class='r'>"+val(a.q9_cr,"€")+"</td><td class='r'>"+ok(near(a.q9_cr,ANS.cr,C),0.25)+"</td></tr></table></div>";
+  h+="<div class='pc-q'><h3><span>Q10 · Du coût au prix affiché</span><span class='p'>"+pts(g.q10,1)+"</span></h3><table>"+
+    row("Prix de vente HT (coefficient 2,5)",a.q10_ht,"€",ok(near(a.q10_ht,ANS.ht,C),0.25))+row("Prix de vente TTC calculé",a.q10_ttc,"€",ok(near(a.q10_ttc,ANS.ttc,C),0.25))+
+    row("Prix HT réel (affiché 9,90 €)",a.q10_htr,"€",ok(near(a.q10_htr,ANS.htr,C),0.25))+row("Marge par portion",a.q10_marge,"€",ok(near(a.q10_marge,ANS.marge,C),0.25))+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q11 · Grille de décision</span><span class='p'>"+frp(g.q11)+" / 0,5 + …… / 1</span></h3><table>"+
+    row("Total pondéré Hôpital Saint-Roch",a.q11_a,"pts",ok(near(a.q11_a,ANS.ga,0),0.25))+row("Total pondéré Parc d'activités Nord",a.q11_b,"pts",ok(near(a.q11_b,ANS.gb,0),0.25))+
+    "</table><div class='st' style='margin-top:6px'>Emplacement conseillé : <b>"+val((SITES.find(s=>s[0]===a.q11_choix)||[])[1])+"</b></div>"+txt(a.q11_just)+"</div>";
+  h+="<div class='pc-q'><h3><span>Q12 · Rentabilité de la formule</span><span class='p'>"+pts(g.q12,1)+"</span></h3><table>"+
+    row("Prix HT de la formule",a.q12_ht,"€",ok(near(a.q12_ht,ANS.fht,C),0.25))+row("Coût de revient des trois produits",a.q12_cr,"€",ok(near(a.q12_cr,ANS.fcr,C),0.25))+row("Marge de la formule",a.q12_marge,"€",ok(near(a.q12_marge,ANS.fm,C),0.5))+"</table></div>";
+  h+="<div class='pc-q'><h3><span>Q13 · Conseil argumenté sur le prix</span><span class='p'>…… / 1,5</span></h3>"+txt(a.q13)+"</div>";
   h+="<div class='pc-foot'>Copie générée le "+new Date().toLocaleString("fr-FR")+" · Food Truck Academy · Bitume &amp; Basilic et Bellerive sont fictifs. Note finale = partie automatique + réponses rédigées − "+frp(PENALTY)+" pt par sortie du plein écran.</div>";
   $("#printCopy").innerHTML=h;
 }
-
 /* =========================================================
    CALCULATRICE
    ========================================================= */
