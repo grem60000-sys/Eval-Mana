@@ -321,6 +321,22 @@ mark.hl.u{background:transparent;text-decoration:underline;text-decoration-color
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--mustard);color:var(--mustard-ink);font-weight:800;padding:11px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:9500;max-width:calc(100% - 32px)}
 .toast.show{transform:translate(-50%,0);visibility:visible}
 
+/* ================= MODE CORRECTEUR ================= */
+.corr-box{display:none;margin-top:16px;background:#E3F5EA;border:2px solid var(--good);border-radius:14px;padding:14px 16px;font-size:15px}
+.corr-box h5{margin:0 0 6px;font-family:var(--f-display);font-weight:400;font-size:14px;color:#14532D}
+.corr-box ul{margin:4px 0 0;padding-left:18px}
+.corr-box li+li{margin-top:3px}
+.corr-box table{border-collapse:collapse;font-size:14px;margin-top:6px}
+.corr-box td,.corr-box th{border:1px solid #9FD3B2;padding:4px 8px;text-align:left}
+.corr-box td.r{text-align:right;font-family:var(--f-mono)}
+body.corr .corr-box{display:block}
+body.corr .opt[data-ok]{border-color:var(--good);box-shadow:0 0 0 3px rgba(30,138,76,.25)}
+body.corr .opt[data-ok]::after{content:"✔ bonne réponse";margin-left:auto;font-size:12px;font-weight:800;color:var(--good)}
+.prof-only{display:none!important}
+body.prof .prof-only{display:flex!important}
+body.prof .pen,body.prof .stu-only{display:none!important}
+.prof-badge{background:var(--good);color:#fff;font-weight:800;font-size:12.5px;border-radius:999px;padding:5px 12px;white-space:nowrap}
+
 /* ================= FIN ================= */
 #end{min-height:100%;display:grid;place-items:center;padding:30px 16px;background:linear-gradient(180deg,#0F7472 0%,#0B5856 100%)}
 .end-card{background:var(--surface);border-radius:22px;border:3px solid var(--ink);box-shadow:0 12px 0 var(--asphalt);max-width:720px;width:100%;padding:28px;text-align:center}
@@ -402,7 +418,7 @@ mark.hl.u{background:transparent;text-decoration:underline;text-decoration-color
       <div class="rules">
         <b>Règles de l'épreuve</b>
         <ul>
-          <li>L'épreuve se passe <b>en plein écran</b>. Chaque sortie (Échap, changement d'onglet ou de fenêtre, clic hors de la page) coûte <b>1 point</b>, noté sur ta copie.</li>
+          <li>L'épreuve se passe <b>en plein écran</b>. Chaque sortie (Échap, changement d'onglet ou de fenêtre, clic hors de la page) coûte <b>0,5 point</b>, noté sur ta copie.</li>
           <li>Après une sortie, tu as <b>10 secondes</b> pour revenir. Sinon, ta copie est remise automatiquement.</li>
           <li>Au bout de <b>5 sorties</b>, la copie est remise automatiquement.</li>
           <li>Tes réponses sont enregistrées en continu. À la fin, tu dois <b>enregistrer ta copie en PDF</b>.</li>
@@ -411,6 +427,7 @@ mark.hl.u{background:transparent;text-decoration:underline;text-decoration-color
       <label class="agree"><input type="checkbox" id="inAgree"> J'ai lu les règles et je m'engage à travailler seul(e).</label>
       <div class="err" id="loginErr"></div>
       <button class="btn btn-k" type="submit" id="btnStart" style="font-size:17px">Démarrer en plein écran</button>
+      <button class="btn btn-ghost" type="button" id="btnProf" style="font-size:13.5px;padding:8px 14px;align-self:center">👩‍🏫 Accès correcteur (professeur)</button>
     </form>
   </div>
 </section>
@@ -426,8 +443,10 @@ mark.hl.u{background:transparent;text-decoration:underline;text-decoration-color
       <button class="tool" id="tHl" type="button" title="Surligner et souligner"><span>🖍️</span><span class="lbl">Surligner</span></button>
       <button class="tool" id="tNotes" type="button" title="Brouillon"><span>📝</span><span class="lbl">Brouillon</span></button>
       <button class="tool" id="tSplit" type="button" title="Écran partagé : question à gauche, document à droite"><span>⊞</span><span class="lbl">Écran partagé</span></button>
+      <button class="tool prof-only" id="tCorr" type="button" title="Afficher ou masquer le corrigé"><span>✅</span><span class="lbl">Corrigé</span></button>
     </div>
     <div class="pen" title="Sorties du plein écran"><span id="penDots"></span><b id="penPts">0 pt</b></div>
+    <div class="prof-badge prof-only">MODE CORRECTEUR</div>
     <div class="timer" id="timer">60:00</div>
   </header>
 
@@ -856,10 +875,11 @@ mark.hl.u{background:transparent;text-decoration:underline;text-decoration-color
 const KEY="fta_eval_bb_v1";
 const DURATION=60*60;           // secondes
 const MAX_EXITS=5;              // sorties avant remise automatique
-const PENALTY=1;                // points retirés par sortie
+const PENALTY=0.5;              // points retirés par sortie
 const RETURN_DELAY=10;          // secondes pour revenir
 const TEACHER_CODE="MG2026";   // code pour réinitialiser un poste après l'épreuve
 
+let PROF=false;
 const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -934,7 +954,7 @@ const ANS={cm:3.32,ch:0.38,cr:3.70,ht:9.25,ttc:10.175,htr:9.00,marge:5.30};
 let S=load()||null;
 function blank(){return {nom:"",prenom:"",classe:"",startedAt:0,endedAt:0,ended:false,endReason:"",exits:0,log:[],answers:{},order:null,notes:"",printed:false}}
 function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){return null}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function save(){if(PROF)return;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 
 /* Ordre des options du QCM : positions de la bonne réponse variées,
    jamais deux fois de suite la même, et toutes les positions utilisées. */
@@ -958,7 +978,7 @@ function buildQuestions(){
   $("#qcmBox").innerHTML=QCM.map((q,i)=>{
     const ord=S.order[i];
     return "<div class='qcm-item'><h4><span class='n'>"+(i+1)+"</span><span>"+esc(q[0])+"</span></h4><div class='opts' role='radiogroup' aria-label='Question "+(i+1)+"'>"+
-      ord.map((oi,k)=>"<label class='opt'><input type='radio' name='q1_"+i+"' value='"+oi+"'><span class='l'>"+"ABCD"[k]+"</span><span>"+esc(q[1][oi])+"</span></label>").join("")+"</div></div>";
+      ord.map((oi,k)=>"<label class='opt'"+(oi===0?" data-ok":"")+"><input type='radio' name='q1_"+i+"' value='"+oi+"'><span class='l'>"+"ABCD"[k]+"</span><span>"+esc(q[1][oi])+"</span></label>").join("")+"</div></div>";
   }).join("");
   // Q2
   $("#q2Box").innerHTML=Q2.map((q,i)=>"<div class='mrow'><p class='hlz'>"+esc(q[0])+"</p><select class='sel' data-k='q2_"+i+"' aria-label='Geste pour la phrase "+(i+1)+"'><option value=''>— choisir le geste —</option>"+GESTES.map(g=>"<option>"+g+"</option>").join("")+"</select></div>").join("");
@@ -1065,7 +1085,7 @@ function renderTimer(){
   el.classList.toggle("warn",r<=600&&r>300);el.classList.toggle("crit",r<=300);
   if(r<=600&&!warned10){warned10=true;toast("Plus que 10 minutes : pense à te relire.")}
   if(r<=300&&!warned5){warned5=true;toast("Plus que 5 minutes.")}
-  if(r<=0)finish("Temps écoulé : remise automatique");
+  if(r<=0&&!PROF)finish("Temps écoulé : remise automatique");
 }
 
 /* =========================================================
@@ -1081,7 +1101,7 @@ function reqFS(){
 }
 function renderPen(){
   $("#penDots").innerHTML=Array.from({length:MAX_EXITS},(_,i)=>"<i class='"+(i<S.exits?"on":"")+"'></i>").join("");
-  $("#penPts").textContent=S.exits?"−"+(S.exits*PENALTY)+" pt"+(S.exits*PENALTY>1?"s":""):"0 pt";
+  $("#penPts").textContent=S.exits?"−"+frp(S.exits*PENALTY)+" pt":"0 pt";
 }
 function violation(reason){
   if(!active||S.ended||ovOpen)return;
@@ -1093,8 +1113,8 @@ function violation(reason){
 }
 function openOv(){
   ovOpen=true;$("#acOv").classList.remove("hidden");
-  $("#acCount").textContent=S.exits;$("#acPen").textContent="−"+(S.exits*PENALTY);
-  $("#acMsg").textContent=S.exits===MAX_EXITS-1?"Dernier avertissement : à la prochaine sortie, ta copie sera remise automatiquement.":"Tu viens de quitter l'épreuve. Cette sortie te coûte "+PENALTY+" point.";
+  $("#acCount").textContent=S.exits;$("#acPen").textContent="−"+frp(S.exits*PENALTY);
+  $("#acMsg").textContent=S.exits===MAX_EXITS-1?"Dernier avertissement : à la prochaine sortie, ta copie sera remise automatiquement.":"Tu viens de quitter l'épreuve. Cette sortie te coûte "+frp(PENALTY)+" point.";
   let left=RETURN_DELAY;const ring=$("#cdRing"),C=351.86;
   const draw=()=>{$("#cdNum").textContent=left;ring.style.strokeDashoffset=String(C*(1-left/RETURN_DELAY));ring.setAttribute("stroke",left>6?"#7CF0A6":left>3?"#F5C431":"#FFFFFF")};
   draw();clearInterval(cdTimer);
@@ -1111,7 +1131,7 @@ document.addEventListener("fullscreenchange",onFsChange);
 document.addEventListener("webkitfullscreenchange",onFsChange);
 window.addEventListener("blur",()=>violation("blur"));
 document.addEventListener("visibilitychange",()=>{if(document.hidden)violation("changement d'onglet ou de fenêtre")});
-window.addEventListener("beforeunload",e=>{if(S&&S.startedAt&&(!S.ended||!S.printed)){e.preventDefault();e.returnValue=""}});
+window.addEventListener("beforeunload",e=>{if(!PROF&&S&&S.startedAt&&(!S.ended||!S.printed)){e.preventDefault();e.returnValue=""}});
 document.addEventListener("contextmenu",e=>{if(active&&!(e.target.closest&&e.target.closest("mark.hl")))e.preventDefault()});
 document.addEventListener("keydown",e=>{
   if(!active)return;
@@ -1133,8 +1153,9 @@ function begin(isResume){
   if(!S.order){S.order=makeOrder()}
   save();
   buildQuestions();restoreFields();renderProg();renderPen();go("cover");
+  if(PROF){buildCorr();$("#timer").textContent="∞";return}
   graceUntil=Date.now()+1500;
-  setTimeout(()=>{active=true;if(isResume){S.exits++;S.log.push({t:new Date().toLocaleTimeString("fr-FR"),r:"reprise après fermeture ou rechargement de la page"});save();renderPen();toast("Reprise de l'épreuve : sortie comptée (−"+PENALTY+" pt).");if(S.exits>=MAX_EXITS)finish("5 sorties du plein écran : remise automatique")}},800);
+  setTimeout(()=>{active=true;if(isResume){S.exits++;S.log.push({t:new Date().toLocaleTimeString("fr-FR"),r:"reprise après fermeture ou rechargement de la page"});save();renderPen();toast("Reprise de l'épreuve : sortie comptée (−"+frp(PENALTY)+" pt).");if(S.exits>=MAX_EXITS)finish("5 sorties du plein écran : remise automatique")}},800);
   clearInterval(tick);tick=setInterval(renderTimer,1000);renderTimer();
 }
 $("#loginForm").addEventListener("submit",e=>{
@@ -1150,6 +1171,34 @@ $("#loginForm").addEventListener("submit",e=>{
   if(fsOK)reqFS().then(go2).catch(()=>{$("#loginErr").textContent="Le plein écran a été refusé. Clique à nouveau sur le bouton."});
   else go2();
 });
+
+/* =========================================================
+   MODE CORRECTEUR
+   ========================================================= */
+$("#btnProf").addEventListener("click",()=>{
+  const c=prompt("Code professeur :");
+  if(c===null)return;
+  if(c.trim().toUpperCase()!==TEACHER_CODE){$("#loginErr").textContent="Code professeur incorrect.";return}
+  PROF=true;document.body.classList.add("prof");
+  S=blank();S.nom="Correcteur";S.prenom="Mode";S.classe="";S.startedAt=Date.now();
+  begin(false);toast("Mode correcteur : aucune surveillance, rien n'est enregistré.");
+});
+$("#tCorr").addEventListener("click",()=>{document.body.classList.toggle("corr");$("#tCorr").classList.toggle("on",document.body.classList.contains("corr"))});
+function corr(id,html){const q=document.querySelector("#"+id+" .q-body");if(!q)return;const d=document.createElement("div");d.className="corr-box";d.innerHTML="<h5>CORRIGÉ</h5>"+html;q.appendChild(d)}
+function buildCorr(){
+  corr("Q1","<p>Bonnes réponses repérées en vert ci-dessus (0,5 pt chacune).</p><ul><li>1. Personnes, but commun, moyens, règles</li><li>2. Un objectif (chiffré et daté)</li><li>3. Engage l'avenir sur plusieurs années</li><li>4. Délégatif</li><li>5. Départs ÷ effectif moyen</li><li>6. Zone d'où vient la majorité des clients</li><li>7. 12 × 1,10 = 13,20 €</li><li>8. Perte de repères sur qui décide</li></ul>");
+  corr("Q2","<ul>"+Q2.map(q=>"<li>"+esc(q[0])+" → <b>"+q[1]+"</b></li>").join("")+"</ul><p>0,5 pt par association.</p>");
+  corr("Q3","<ul>"+Q3.map(q=>"<li>"+esc(q[0])+" → <b>"+ODE[q[1]]+"</b></li>").join("")+"</ul><p>0,25 pt par information.</p>");
+  corr("Q4","<p><b>Entreprise privée</b> (0,5 pt, automatique).</p><p>Justification attendue (0,5 pt, à noter) : c'est une SAS ; elle vit du chiffre d'affaires payé par ses clients (590 000 €) ; elle doit dégager un bénéfice pour durer et investir. Un seul élément précis suffit.</p>");
+  corr("Q5","<ul>"+Q5.map(q=>"<li>"+esc(q[0])+" → <b>"+FO[q[1]]+"</b></li>").join("")+"</ul><p>Les objectifs sont chiffrés et datés ; les finalités se racontent. 0,25 pt par phrase.</p>");
+  corr("Q6","<ul><li>Lina → <b>Directif</b> : elle décide seule, consignes et délai, « sans discussion ».</li><li>Hugo → <b>Participatif</b> : avis de chacun, décision commune.</li><li>Sofia → <b>Persuasif</b> : elle décide mais explique pourquoi.</li></ul><p>0,5 pt par manager.</p>");
+  corr("Q7","<table><tr><td>Turnover</td><td>7 ÷ 14 × 100</td><td class='r'><b>50 %</b></td></tr><tr><td>Absentéisme</td><td>280 ÷ 3 080 × 100</td><td class='r'><b>9,1 %</b></td></tr></table><p>Tolérances : 49,5 à 50,5 % et 9,0 à 9,2 %. 0,5 pt chacun.</p>");
+  corr("Q8","<p><b>a) Deux signes parmi (0,5 pt chacun) :</b></p><ul><li>Poste de chef du camion Zone vacant : ses 3 équipiers dépendent directement de la gérante, qui encadre déjà 5 personnes (8 personnes en direct).</li><li>Cuisine centrale isolée sur l'organigramme : rattachée à personne, aucune coordination avec les camions, d'où le gaspillage (Doc 3, Inès).</li><li>Décisions bloquées : 12 jours pour obtenir une réponse de la gérante.</li><li>Réunionite : 6 h par semaine contre 2 h.</li><li>Turnover de 50 % (7 départs contre 2) et absentéisme de 9,1 %.</li></ul><p><b>b) Symptôme → cause (0,5 pt) :</b> par exemple, la réunionite et les décisions qui traînent sont des symptômes ; la cause probable est une gérante débordée qui centralise toutes les décisions (commandes, plannings, recettes) et l'absence de chef sur la zone d'activités. Accepter aussi : gaspillage (symptôme) → manque de coordination entre cuisine et camions (cause).</p>");
+  corr("Q9","<table><tr><th>Ingrédient</th><th>Quantité</th><th>Prix unitaire</th><th>Coût</th></tr>"+FT.map(f=>"<tr><td>"+esc(f[0])+"</td><td class='r'>"+fr(f[2],3).replace(/0+$/,"").replace(/,$/,"")+" "+f[1]+"</td><td class='r'>"+fr(f[3])+" €</td><td class='r'><b>"+fr(f[4])+" €</b></td></tr>").join("")+"<tr><td colspan='3'><b>Coût matière</b></td><td class='r'><b>3,32 €</b></td></tr><tr><td colspan='3'>Emballage et charges (0,22 + 0,03 + 0,13)</td><td class='r'>0,38 €</td></tr><tr><td colspan='3'><b>Coût de revient</b></td><td class='r'><b>3,70 €</b></td></tr></table><p>0,25 pt par coût d'ingrédient, 0,5 pt pour le coût matière, 0,5 pt pour le coût de revient. Les colonnes quantité et prix unitaire ne sont pas notées.</p>");
+  corr("Q10","<table><tr><td>Prix HT</td><td>3,70 × 2,5</td><td class='r'><b>9,25 €</b></td></tr><tr><td>Prix TTC</td><td>9,25 × 1,10 = 10,175</td><td class='r'><b>10,18 €</b> (10,17 accepté)</td></tr></table>");
+  corr("Q11","<table><tr><td>Prix HT réel</td><td>9,90 ÷ 1,10</td><td class='r'><b>9,00 €</b></td></tr><tr><td>Marge par portion</td><td>9,00 − 3,70</td><td class='r'><b>5,30 €</b></td></tr></table>");
+  corr("Q12","<p><b>Calcul (0,5 pt) :</b> 3,32 ÷ 9,00 × 100 ≈ <b>36,9 %</b>, juste au-dessus de la zone conseillée de 25 à 35 % (zone « limite »).</p><p><b>Argument complet (0,5 pt) :</b> affirmation + preuve chiffrée + exemple, clairement identifiables.</p><p><b>Cohérence (0,5 pt) :</b> les deux avis sont acceptés s'ils sont justifiés. Par exemple : 9,90 € est un bon choix commercial (prix psychologique, dans la fourchette des concurrents de la gare, 8,50 à 10,50 €, marge de 5,30 € positive), mais un peu juste, puisque le coût matière dépasse 35 %. Ou bien : il vaudrait mieux afficher 10,50 € (ratio de 34,8 %) ou réduire le jambon cru.</p>");
+}
 
 /* =========================================================
    REMISE ET FIN
@@ -1178,10 +1227,11 @@ function showEnd(){
   $("#endName").textContent=S.prenom+" "+S.nom.toUpperCase()+(S.classe?" · "+S.classe:"");
   $("#endTime").textContent=fmtDur(S.endedAt-S.startedAt);
   $("#endAns").textContent=answeredCount()+" / "+units().length;
-  $("#endPen").textContent=S.exits+" · −"+(S.exits*PENALTY);
+  $("#endPen").textContent=S.exits+" · −"+frp(S.exits*PENALTY);
   if(S.printed)$("#printedOk").classList.remove("hidden");
 }
 $("#btnReset").addEventListener("click",()=>{
+  if(PROF){location.reload();return}
   if(!S.printed){toast("La copie doit d'abord être enregistrée en PDF.");return}
   const c=prompt("Code professeur pour ouvrir une nouvelle session :");
   if(c&&c.trim().toUpperCase()===TEACHER_CODE){try{localStorage.removeItem(KEY)}catch(e){}S=null;location.reload()}
@@ -1238,7 +1288,7 @@ function buildPrint(){
   h+="<div class='pc-q'><h3><span>Q10 · Prix de vente calculé</span><span class='p'>"+pts(g.q10,1)+"</span></h3><table><tr><td>Prix de vente HT (coefficient 2,5)</td><td class='r'>"+val(a.q10_ht,"€")+"</td><td class='r'>"+(near(a.q10_ht,ANS.ht,0.011)?"0,5":"0")+"</td></tr><tr><td>Prix de vente TTC</td><td class='r'>"+val(a.q10_ttc,"€")+"</td><td class='r'>"+(near(a.q10_ttc,ANS.ttc,0.011)?"0,5":"0")+"</td></tr></table></div>";
   h+="<div class='pc-q'><h3><span>Q11 · Prix affiché 9,90 €</span><span class='p'>"+pts(g.q11,1)+"</span></h3><table><tr><td>Prix HT réellement encaissé</td><td class='r'>"+val(a.q11_htr,"€")+"</td><td class='r'>"+(near(a.q11_htr,ANS.htr,0.011)?"0,5":"0")+"</td></tr><tr><td>Marge par portion</td><td class='r'>"+val(a.q11_marge,"€")+"</td><td class='r'>"+(near(a.q11_marge,ANS.marge,0.011)?"0,5":"0")+"</td></tr></table></div>";
   h+="<div class='pc-q'><h3><span>Q12 · Conseil argumenté</span><span class='p'>…… / 1,5</span></h3>"+txt(a.q12)+"</div>";
-  h+="<div class='pc-foot'>Copie générée le "+new Date().toLocaleString("fr-FR")+" · Food Truck Academy · Bitume &amp; Basilic et Bellerive sont fictifs. Note finale = partie automatique + réponses rédigées − "+PENALTY+" pt par sortie du plein écran.</div>";
+  h+="<div class='pc-foot'>Copie générée le "+new Date().toLocaleString("fr-FR")+" · Food Truck Academy · Bitume &amp; Basilic et Bellerive sont fictifs. Note finale = partie automatique + réponses rédigées − "+frp(PENALTY)+" pt par sortie du plein écran.</div>";
   $("#printCopy").innerHTML=h;
 }
 
@@ -1360,7 +1410,7 @@ else if(S&&S.startedAt){
   $("#inNom").value=S.nom;$("#inPrenom").value=S.prenom;$("#inClasse").value=S.classe||"";
   $("#btnStart").textContent="Reprendre l'épreuve en plein écran";
   $("#loginErr").style.color="var(--ketchup)";
-  $("#loginErr").textContent="Épreuve en cours pour "+S.prenom+" "+S.nom.toUpperCase()+". La reprise compte comme une sortie (−"+PENALTY+" pt).";
+  $("#loginErr").textContent="Épreuve en cours pour "+S.prenom+" "+S.nom.toUpperCase()+". La reprise compte comme une sortie (−"+frp(PENALTY)+" pt).";
 }
 })();
 </script>
